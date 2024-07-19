@@ -1,10 +1,18 @@
+import { type } from "@testing-library/user-event/dist/type";
 import { useReducer, useState } from "react";
 
 function reducer(state, action){
     console.log(state, action);
+
+    // return state + action
+    if(action.type === "inc") return state + 1;
+    if(action.type === "dec") return state - 1;
+    if(action.type === "setCount") return action.payload;
 }
 
 function DateCounter() {
+  //dispatch is like a setState here 0 is the state 
+  //while 1 and -1 are the actions
   const [count, dispatch] = useReducer(reducer, 0)
   
   //const [count, setCount] = useState(0);
@@ -16,16 +24,21 @@ function DateCounter() {
   date.setDate(date.getDate() + count);
 
   const dec = function () {
+    dispatch({type: "dec"})
+    // dispatch(-1)
     // setCount((count) => count - 1);
     // setCount((count) => count - step);
   };
 
   const inc = function () {
+    dispatch({type: "inc"})
+    //dispatch(1)
     // setCount((count) => count + 1);
     // setCount((count) => count + step);
   };
 
   const defineCount = function (e) {
+    dispatch({type: "setCount", payload: Number(e.target.value)})
     // setCount(Number(e.target.value));
   };
 
