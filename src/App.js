@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useReducer, useState } from "react";
 
 function reducer(state, action){
@@ -12,12 +11,13 @@ function reducer(state, action){
 
 function DateCounter() {
   //dispatch is like a setState here 0 is the state 
-  //while 1 and -1 are the actions
+  //while 1 and -1 are the actions.payload
   const [count, dispatch] = useReducer(reducer, 0)
   
   //const [count, setCount] = useState(0);
+  // const [step, setStep] = useState(1);
+
   
-  const [step, setStep] = useState(1);
 
   // This mutates the date object.
   const date = new Date("june 21 2027");
