@@ -18,7 +18,7 @@ function reducer(state, action){
         case "dec": 
         return {...state, count: state.count - state.step}
         case "inc": 
-        return{...state, count: state.count +state.step}
+        return {...state, count: state.count + state.step}
         case "setCount": 
         return {...state, count: action.payload}
         case "setStep": 
@@ -36,13 +36,15 @@ function DateCounter() {
   
   //const [count, setCount] = useState(0);
   // const [step, setStep] = useState(1);
-
+  
+  
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  
   const {count, step} = state;
 
+
   // This mutates the date object.
-  const date = new Date("june 21 2027");
+  const date = new Date("july 23 2024");
   date.setDate(date.getDate() + count);
 
   const dec = function () {
@@ -66,7 +68,7 @@ function DateCounter() {
 
   const defineStep = function (e) {
     dispatch({type: "setStep", payload: Number(e.target.value)})
-    // setCount(Numb
+    // setCount(Numb(e.target.value))
     // setStep(Number(e.target.value));
   };
 
