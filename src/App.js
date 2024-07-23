@@ -49,9 +49,9 @@ function DateCounter() {
 
   const dec = function () {
     dispatch({type: "dec"})
-    // dispatch(-1)
-    // setCount((count) => count - 1);
-    // setCount((count) => count - step);
+    dispatch(-1)
+    setCount((count) => count - 1);
+    setCount((count) => count - step);
   };
 
   const inc = function () {
