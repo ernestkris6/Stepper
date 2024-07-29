@@ -10,7 +10,6 @@ function App() {
           <p>1/15</p>
           <p>Questions?</p>
       </Main>
-
     </div>
   )
 }
