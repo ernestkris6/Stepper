@@ -46,7 +46,7 @@ function App() {
   const numQuestions = questions.length
 
   useEffect(function(){
-     fetch('http://localhost:9000/questions/')
+     fetch('http://localhost:8000/question')
     .then((res)=> res.json())
     .then((data)=> dispatch({type: 'dataRecived',
       payload: data}))
