@@ -28,7 +28,7 @@ export default function App() {
 
 function Tabbed({ content }) {
   const [activeTab, setActiveTab] = useState(0);
-
+  
   return (
     <div>
       <div className="tabs">
@@ -48,6 +48,9 @@ function Tabbed({ content }) {
     </div>
   );
 }
+
+//Component is a function that returns a piece of UI
+
 
 function Tab({ num, activeTab, onClick }) {
   return (
@@ -103,7 +106,6 @@ function DifferentContent() {
 
 
 
-//Component is a function that returns a piece of UI
 
 
 
