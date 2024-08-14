@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer } from 'react';
-import Header from './Header';
+import Header from './Components/Header';
 import Main from './Main';
-import Loader from './Loader';
-import Error from './Error';
-import StartScreen from './StartScreen';
-import Question from './Question';
+import Loader from './Components/Loader';
+import Error from './Components/Error';
+import StartScreen from './Components/StartScreen';
+import Question from './Components/Question';
 
 
 const initialState = {
