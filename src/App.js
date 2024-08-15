@@ -5,6 +5,7 @@ import Loader from './Components/Loader';
 import Error from './Components/Error';
 import StartScreen from './Components/StartScreen';
 import Question from './Components/Question';
+import Questions from './Components/Questions';
 
 
 const initialState = {
@@ -59,8 +60,11 @@ function App() {
       <Main>
           {status === 'loading' && <Loader />}
           {status === 'error' && <Error />}
-          {status === 'ready' && <StartScreen dispatch={dispatch} numQuestions={numQuestions}/>}
+          {status === 'ready' && 
+          <StartScreen dispatch={dispatch } 
+          numQuestions={numQuestions}/>}
           {status === 'active' && <Question />}
+         
       </Main>
     </div>
   )
