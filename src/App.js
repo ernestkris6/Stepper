@@ -5,7 +5,6 @@ import Loader from './Components/Loader';
 import Error from './Components/Error';
 import StartScreen from './Components/StartScreen';
 import Question from './Components/Question';
-import Questions from './Components/Questions';
 
 
 const initialState = {
@@ -44,10 +43,12 @@ function App() {
 
   const [{questions, status}, dispatch] = useReducer(reducer, initialState);
 
-  const numQuestions = questions.length
+  const numQuestions = questions.length;
+
+  
 
   useEffect(function(){
-     fetch('http://localhost:8000/question')
+     fetch("http://localhost:8000/question")
     .then((res)=> res.json())
     .then((data)=> dispatch({type: 'dataRecived',
       payload: data}))
