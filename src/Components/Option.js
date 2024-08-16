@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default function Option() {
+export default function Option({question, dispatch}) {
   return (
-    <div>Option</div>
+    <div>
+        {question.options.map((index, option)=> {
+            <button>
+                {option}
+            </button>
+        })}
+    </div>
   )
 }

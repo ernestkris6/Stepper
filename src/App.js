@@ -69,7 +69,11 @@ function App() {
           {status === 'ready' && 
           <StartScreen dispatch={dispatch } 
           numQuestions={numQuestions}/>}
-          {status === 'active' && <Question  />}
+          {status === 'active' && (
+          <Question  
+          question={questions[index]} 
+          dispatch={dispatch}/>
+          )}
          
       </Main>
     </div>
