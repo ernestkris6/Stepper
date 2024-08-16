@@ -53,7 +53,7 @@ function App() {
   
 
   useEffect(function(){
-     fetch("http://localhost:8000/question")
+     fetch("http://localhost:8000/questions")
     .then((res)=> res.json())
     .then((data)=> dispatch({type: 'dataRecived',
       payload: data}))
@@ -69,7 +69,7 @@ function App() {
           {status === 'ready' && 
           <StartScreen dispatch={dispatch } 
           numQuestions={numQuestions}/>}
-          {status === 'active' && <Question />}
+          {status === 'active' && <Question  />}
          
       </Main>
     </div>
