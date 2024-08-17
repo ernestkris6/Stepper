@@ -243,7 +243,8 @@ function App() {
           {status === 'loading' && <Loader />}
           {status === 'error' && <Error />}
           {status === 'ready' && 
-          <StartScreen dispatch={dispatch} numQuestions={numQuestions}/>}
+          <StartScreen dispatch={dispatch} 
+          numQuestions={numQuestions}/>}
           {status === 'active' && ( 
           <>
           <Question 

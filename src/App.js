@@ -14,6 +14,7 @@ import Question from './Components/Question';
 
 const initialState = {
   questions: [],
+  index: 0,
 
   // 'loading', 'error', 'ready', 'active', 'finish'
   status: 'loading',
@@ -46,19 +47,18 @@ function reducer(state, action){
 
 function App() {
 
-  const [{questions, status}, dispatch] = useReducer(reducer, initialState);
+  const [{questions, status, index}, dispatch] = useReducer(reducer, initialState);
 
   const numQuestions = questions.length;
 
   
 
-  useEffect(function(){
-     fetch("http://localhost:9000/questions")
-    .then((res)=> res.json())
-    .then((data)=> dispatch({type: 'dataRecived',
-      payload: data}))
-    .catch((err)=> dispatch({type: "dataFailed"}));
-  }, [])
+  useEffect(()=> {
+    fetch("http://localhost:9000/questions")
+   .then((res)=> res.json())
+   .then((data)=> dispatch({type: 'dataReceived', payload: data}))
+   .catch((err)=> dispatch({type: "dataFailed"}));
+ }, [])
 
   return (
     <div className='app'>
@@ -71,6 +71,7 @@ function App() {
           numQuestions={numQuestions}/>}
           {status === 'active' && (
           <Question   
+          question={questions[index]}
           dispatch={dispatch}/>
           )}
          
