@@ -5,7 +5,6 @@ function Header() {
     <header className='app-header'>
         <img src='logo512.png' alt='react-logo' />
         <h1 className='head'>REACT QUIZ</h1>
-
     </header>
   )
 }
