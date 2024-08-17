@@ -9,7 +9,8 @@ import Main from './Main';
 import Loader from './Components/Loader';
 import Error from './Components/Error';
 import StartScreen from './Components/StartScreen';
-import Question from './Components/Question';
+// import Question from './Components/Question';
+import Questions from './Components/Questions';
 
 
 const initialState = {
@@ -70,7 +71,7 @@ function App() {
           <StartScreen dispatch={dispatch} 
           numQuestions={numQuestions}/>}
           {status === 'active' && (
-          <Question   
+          <Questions   
           question={questions[index]}
           dispatch={dispatch}/>
           )}
