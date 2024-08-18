@@ -72,6 +72,7 @@ function App() {
           numQuestions={numQuestions}/>}
           {status === 'active' && (
           <Questions   
+          numQuestions={numQuestions}
           question={questions[index]}
           dispatch={dispatch}/>
           )}
