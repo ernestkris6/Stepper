@@ -2,9 +2,10 @@ import React from 'react';
 
 export default function Progress({numQuestion}) {
   return (
-    <div>
+    <header className='progress'>
       <progess max={numQuestion}/>
-    </div>
+      <p>Question</p>
+    </header>
   )
 }
 
