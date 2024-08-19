@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-export default function Progress() {
+export default function Progress({numQuestion}) {
   return (
-    <div>Progress</div>
+    <div>
+      <progess max={numQuestion}/>
+    </div>
   )
 }
 

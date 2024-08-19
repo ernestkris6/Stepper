@@ -11,6 +11,7 @@ import Error from './Components/Error';
 import StartScreen from './Components/StartScreen';
 // import Question from './Components/Question';
 import Questions from './Components/Questions';
+import Progress from './Components/Progress';
 
 
 const initialState = {
@@ -71,11 +72,16 @@ function App() {
           <StartScreen dispatch={dispatch} 
           numQuestions={numQuestions}/>}
           {status === 'active' && (
+          <>
+          <Progress numQuestion={numQuestions} />
           <Questions   
           numQuestions={numQuestions}
           question={questions[index]}
-          dispatch={dispatch}/>
-          )}
+          dispatch={dispatch}
+          />
+          </>
+          )
+          }
          
       </Main>
     </div>
